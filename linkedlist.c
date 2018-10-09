@@ -36,18 +36,15 @@ struct node * insert_front(struct node *target, int i)
 struct node * free_list(struct node *head)
 {
     /*
-     * Frees all memory used by a linked list that starts with the given node 
+     * Frees all memory of a linked list from the given node. 
      * 
-     * Returns a pointer to the beginning of a list
+     * Returns the given.
      */
-    struct node *cur_node = head;
-    struct node *temp;
-    while (cur_node)
+    if (head->next)
     {
-        temp = cur_node;
-        cur_node = cur_node->next;
-        printf("Freeing %p, holding %d\n", temp, temp->i);
-        free(temp);
+        free_list(head->next);
     }
+    printf("Freeing %p, holding %d\n", head, head->i);
+    free(head);
     return head;
 }
