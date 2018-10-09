@@ -4,6 +4,11 @@ struct node { int i; struct node *next;};
 
 void print_list(struct node *head)
 {
+  /*
+   * Prints all values in a linked list
+   * The pointer to the next node of the last node must be a null pointer,
+   * or else it will probably do unexpected things
+   */
   struct node *cur_node = head;
   while (cur_node)
   {
@@ -13,7 +18,6 @@ void print_list(struct node *head)
   return;
 }
 
-//NOTE: this should be in a different file
 int main()
 {
   struct node a;
