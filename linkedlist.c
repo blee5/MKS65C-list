@@ -40,7 +40,7 @@ struct node * free_list(struct node *head)
     /*
      * Frees all memory of a linked list from the node pointed to by the given pointer. 
      * 
-     * Returns the given pointer to a node.
+     * Returns a null pointer.
      */
     if (head->next)
     {
@@ -48,5 +48,5 @@ struct node * free_list(struct node *head)
     }
     printf("Freeing %p, holding %d\n", head, head->i);
     free(head);
-    return head;
+    return 0;
 }

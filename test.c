@@ -26,8 +26,8 @@ int main()
     print_list(list);
 
     printf("\nFreeing list:\n");
-    struct node *a = free_list(list);
-    printf("free_list returned: %p\n", a);
+    list = free_list(list);
+    printf("free_list returned: %p\n", list);
 
     return 0;
 }
