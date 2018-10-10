@@ -27,7 +27,9 @@ int main()
 
     printf("\nFreeing list:\n");
     list = free_list(list);
-    printf("free_list returned: %p\n", list);
+    
+    printf("\nPrinting freed list\n");
+    print_list(list);
 
     return 0;
 }
