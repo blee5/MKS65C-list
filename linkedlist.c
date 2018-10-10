@@ -46,7 +46,7 @@ struct node * free_list(struct node *head)
     {
         free_list(head->next);
     }
-    printf("Freeing %p, holding %d\n", head, head->i);
+    // printf("Freeing %p, holding %d\n", head, head->i);
     free(head);
     return 0;
 }
