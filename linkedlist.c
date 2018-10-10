@@ -11,11 +11,13 @@ void print_list(struct node *head)
      * The linked list must be terminated by a null pointer.
      */
     struct node *cur_node = head;
+    printf("{");
     while (cur_node)
     {
-        printf("%d\n", cur_node->i);
+        printf("%d, ", cur_node->i);
         cur_node = cur_node->next;
     };
+    printf("}");
     return;
 }
 
@@ -36,9 +38,9 @@ struct node * insert_front(struct node *target, int i)
 struct node * free_list(struct node *head)
 {
     /*
-     * Frees all memory of a linked list from the given node. 
+     * Frees all memory of a linked list from the node pointed to by the given pointer. 
      * 
-     * Returns the given.
+     * Returns the given pointer to a node.
      */
     if (head->next)
     {

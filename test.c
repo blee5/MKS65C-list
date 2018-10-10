@@ -4,6 +4,9 @@
 
 int main()
 {
+    printf("Printing null list\n");
+    print_list(0);
+
     struct node *head = malloc(sizeof(struct node));
     head->i = 42; head->next = 0;
 
