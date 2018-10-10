@@ -4,26 +4,29 @@
 
 int main()
 {
+    struct node *list = 0;
     printf("Printing null list\n");
-    print_list(0);
+    print_list(list);
 
-    struct node *head = malloc(sizeof(struct node));
-    head->i = 42; head->next = 0;
+    list = malloc(sizeof(struct node));
+    list->i = 42; list->next = 0;
+    printf("\nNew linked list:\n");
+    print_list(list);
 
     printf("\nAfter inserting -255 to beginning:\n");
-    head = insert_front(head, -255);
-    print_list(head);
+    list = insert_front(list, -255);
+    print_list(list);
 
     printf("\nAfter inserting 300 to beginning:\n");
-    head = insert_front(head, 300);
-    print_list(head);
+    list = insert_front(list, 300);
+    print_list(list);
 
     printf("\nAfter inserting 65535 to begining:\n");
-    head = insert_front(head, 65535);
-    print_list(head);
+    list = insert_front(list, 65535);
+    print_list(list);
 
     printf("\nFreeing list:\n");
-    struct node *a = free_list(head);
+    struct node *a = free_list(list);
     printf("free_list returned: %p\n", a);
 
     return 0;
